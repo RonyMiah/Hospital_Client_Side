@@ -6,7 +6,7 @@ const ManageReviews = () => {
     console.log(services);
     const filter = services.filter(ss => ss.isPending===false );
   useEffect(() => {
-    fetch("http://localhost:5000/reviews/")
+    fetch("https://hidden-shore-94920.herokuapp.com/reviews/")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -14,12 +14,14 @@ const ManageReviews = () => {
   // console.log(services);
   return (
     <div className="mx-3">
-      <h1 className="text-center mt-5 fw-bolder">Customer Reviews</h1>
-      <h6 className="text-center  fw-bolder mb-5">Customers Happiness</h6>
-
+      
+      <div className="text-center d-block my-4 py-3">
+        <h1 className=" fs-1 fw-bolder my-2 text-primary  "> Manage Users Reviews </h1>
+        <hr className="w-25 mx-auto " />
+      </div>
       <div className="row  mb-5 ">
         {filter.map((service) => (
-          <ReviewService key={service._id} service={service}></ReviewService>
+          <ReviewService key={service._id} service={service} isAdmin={true}></ReviewService>
           
         ))}
       </div>

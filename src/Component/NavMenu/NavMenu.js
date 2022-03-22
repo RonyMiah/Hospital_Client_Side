@@ -51,7 +51,7 @@ const NavMenu = () => {
                       {
                           admin && <div>
                             <li><Link className="dropdown-item" to="/admin">Make Admin</Link></li>
-                            <li><Link className="dropdown-item" to="/">Manage Service </Link></li>
+                            <li><Link className="dropdown-item" to="/manageService">Manage Service </Link></li>
                             <li><Link className="dropdown-item" to="/manageReviews">Manage Reviews </Link></li>
                             <li><Link className="dropdown-item" to="/addService">Add Service</Link></li>
                         </div>

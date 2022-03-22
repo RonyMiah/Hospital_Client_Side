@@ -12,8 +12,8 @@ const Home = () => {
             
             <Banner></Banner>
             <Services></Services>
-            <SwiperBanner></SwiperBanner>
             <MiddleComponent></MiddleComponent>
+            <SwiperBanner></SwiperBanner>
             <ReviewShow></ReviewShow>
         </div>
     );

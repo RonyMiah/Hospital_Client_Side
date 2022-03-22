@@ -22,7 +22,6 @@ const useFirebase = () => {
   const [admin, setAdmin] = useState(false);
   const googleProvider = new GoogleAuthProvider();
 
-
   const registerUser = (email, password, name, location, navigate) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
@@ -79,7 +78,7 @@ const useFirebase = () => {
         const user = result.user;
 
         // send data from Database Mongodb
-        saveUserDatabase(user.email, user.displayName, 'PUT')
+        saveUserDatabase(user.email, user.displayName, "PUT");
 
         //correct  location redirect
 
@@ -125,7 +124,7 @@ const useFirebase = () => {
 
   const saveUserDatabase = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://hidden-shore-94920.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -142,11 +141,10 @@ const useFirebase = () => {
 
   //
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://hidden-shore-94920.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user?.email]);
-
 
   return {
     user,
@@ -157,8 +155,6 @@ const useFirebase = () => {
     isloading,
     autherror,
     signInUsingGoogle,
-    
-
   };
 };
 

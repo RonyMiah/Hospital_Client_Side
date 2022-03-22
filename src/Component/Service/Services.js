@@ -4,7 +4,7 @@ import Service from "./Service";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://hidden-shore-94920.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [services]);
@@ -24,10 +24,9 @@ const Services = () => {
         className=" py-3 mx-auto row row-cols-1 row-cols-md-2 justify-content-start row-cols-lg-2 row-cols-sm-1 g-4"
         style={{ width: "90%" }}
       >
-          {services.map((service) => (
-            <Service key={service._id} service={service}></Service>
-          ))}
-        
+        {services.map((service) => (
+          <Service key={service._id} service={service}></Service>
+        ))}
       </div>
     </div>
   );

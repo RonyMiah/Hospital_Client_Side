@@ -17,6 +17,7 @@ import Services from "./Component/Service/Services";
 import NavMenu from "./Component/NavMenu/NavMenu";
 import ContactUs from "./Component/ContactUs/ContactUs";
 import AboutUs from "./Component/AboutUs/AboutUs";
+import ManageService from "./Component/ManageService/ManageService";
 
 
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="/booking/:BookingId" element={<PrivetRoute><Booking/></PrivetRoute>}></Route>
             <Route path="/review" element={<PrivetRoute><Review/></PrivetRoute>}></Route>
             <Route path="/admin" element={<AdminRoute><Makeadmin/></AdminRoute>}></Route>
+            <Route path="/manageService" element={<AdminRoute><ManageService/></AdminRoute>}></Route>
             <Route path="/manageReviews" element={<AdminRoute><ManageReviews/></AdminRoute>}></Route>
             <Route path="/addService" element={<AddService/>}></Route>
           </Routes>

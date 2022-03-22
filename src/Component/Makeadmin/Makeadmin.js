@@ -13,7 +13,7 @@ const Makeadmin = () => {
   const handelSubmit = (e) => {
     const user = { email };
 
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://hidden-shore-94920.herokuapp.com/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -66,11 +66,11 @@ const Makeadmin = () => {
           <Form onSubmit={handelSubmit}>
             <input
               style={{
-                backgroundColor: "#e7e7e7",
+                backgroundColor: "",
                 border: "none",
                 borderRadius: "4px",
               }}
-              className="w-100 my-2 p-2"
+              className="w-100 my-2 p-2 border"
               Placeholder="Admin Email"
               type="email"
               name="email"

@@ -6,12 +6,12 @@ import useAuth from "../../Context/AuthProvider/useAuth";
 
 const Review = () => {
   const { register, handleSubmit, reset } = useForm();
-  const {user} = useAuth()
+  const { user } = useAuth();
 
   const onSubmit = (data) => {
     data.isPending = false;
     axios
-      .post("http://localhost:5000/reviews", data)
+      .post("https://hidden-shore-94920.herokuapp.com/reviews", data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("added Successfully");
@@ -37,43 +37,43 @@ const Review = () => {
           <Form onSubmit={handleSubmit(onSubmit)}>
             <input
               style={{
-                backgroundColor: "#e7e7e7",
+                backgroundColor: "",
                 border: "none",
                 borderRadius: "4px",
               }}
-              className="w-100 my-2 p-2"
+              className="w-100 my-2 p-2 border"
               Placeholder="Your Name"
               value={user.displayName}
               {...register("Name")}
             />
             <input
               style={{
-                backgroundColor: "#e7e7e7",
+                backgroundColor: "",
                 border: "none",
                 borderRadius: "4px",
               }}
-              className="w-100 my-2 p-2"
+              className="w-100 my-2 p-2 border"
               Placeholder="Enter Your Online Image link "
               {...register("image")}
             />
             <br />
             <input
               style={{
-                backgroundColor: "#e7e7e7",
+                backgroundColor: "",
                 border: "none",
                 borderRadius: "4px",
               }}
               type="number"
               min="1"
               max="5"
-              className="w-100 my-2 p-2"
+              className="w-100 my-2 p-2 border"
               Placeholder="Review Points(out of 5)"
               {...register("number")}
             />
             <br />
             <textarea
               style={{
-                backgroundColor: "#e7e7e7",
+                backgroundColor: "",
                 border: "none",
                 borderRadius: "4px",
               }}
